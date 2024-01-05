@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital Alchemy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/styles.css">
+  
+</head>
+<body>
+    <div class="breadcrumbs">
+        <a href="/website/root/index.html" class="breadcrumb">home</a>
+        <a href="/website/root/videoexp.html" class="currentpage">video</a>
+    </div>
+    
+    <div class="maincont">
+       
+        
+        
+       
+        
+        
+        <div class="largegallery">
+            <img src="https://storage.googleapis.com/universalfiles/projects/Digital%20Alchemy/IMG_4375.jpeg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+
+            <img src="https://storage.googleapis.com/universalfiles/projects/Digital%20Alchemy/IMG_4379.jpeg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+
+            <img src="https://storage.googleapis.com/universalfiles/projects/Digital%20Alchemy/Screenshot%202022-12-01%20232712.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+
+            <img src="https://storage.googleapis.com/universalfiles/projects/Digital%20Alchemy/Screenshot%202022-12-01%20232946.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">   
+           
+            
+        </div>
+
+
+
+
+        <div class="leftflex vw40 transparentgreybg">
+           
+            <p class="shorttext bisquebg" >
+             This peice was conceived out of an exploration of digital processes mixing, converting, and reimaging, life and experiental data. Beginning with a recording i made of my father playing drums at our farmstead in Vermont, converting physical soundwaves to digital. Using <a class="bisquetext" href="https://derivative.ca/download">Touchdesigner</a> i then created a network that took the sound file, selectivly split the frequencies to isolate kick, toms, snare, and cymbols, and used those to progressivly generate particles forming a three-dimensional visual representation of the sound input. This is where i really started thinking about these processes as digital alchemy, questioning the reality of recording processes through the material shift of data from one form to another.
+              <br><br>
+                From here i wanted to bring the file back into the material world from the digital but because the data existed solely on the GPU i wasn't able to easily acsess it* so at a loss for how to get a printable 3d file i went through photogrametry. Taking hundreds of virtual photos of the final object from all around it these images where then used to recompile a final editable model. 
+                This model was then printed and fixed with a WDMX RGB bulb that could connect back to my laptop and glow in unison to the original sound.
+
+                
+                <br><br><br><br><br>
+                *while i tried to find a way to output the position and color of each point to a file that could then be recompiled in somthing like blender i wasnt abel to crack it in time, but while i was printing the eventual sculpture, i learned that a professer in the sound dept. was able to do almost exactly what i was trying to get to in outputing a file through glsl, that hasn't gone anywhere yet becuase im lazy but thought i'd note that it is possible
+
+            </p>
+        
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+   
+    <div class="overlay" onclick="toggleFullScreen()"></div>
+    <div id="fullscreenImage" class="fullscreen">
+        
+        <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
+    </div>
+
+    <script>
+        function toggleFullScreen(image) {
+            var fullscreenImage = document.getElementById('fullscreenImage');
+            var overlay = document.querySelector('.overlay');
+
+            if (image) {
+                
+                var imgSrc = image.src;
+                fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
+                overlay.style.display = 'block';
+                fullscreenImage.style.display = 'block';
+            } else {
+               
+                overlay.style.display = 'none';
+                fullscreenImage.style.display = 'none';
+            }
+        }
+    </script>
+
+
+</body>
+</html>
