@@ -1,0 +1,99 @@
+
+
+
+body{
+    min-width: 4000px;
+}
+
+
+h1 {
+    font-size: 30em;
+    position: fixed;
+    z-index: -999;
+    color: bisque;
+    transition: color rgba(255, 228, 196, 0.082) 0.5s;
+    
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15em;
+    position: absolute;
+
+    color: rgba(128, 128, 128, 0.301);
+}
+
+
+
+
+
+#portraitCont{
+    position: absolute;
+   top: 10%;
+   right: 5%;
+   width: 350px;
+   
+}
+
+#portrait{
+    width: 100%;
+    border: .5rem solid rgba(123, 111, 86, 0.167);
+}
+
+.firstBlock {
+    margin-top: 10%;
+    margin-left: 110vw;
+    
+    width: 60vw;
+    display: flex;
+    
+    
+}
+
+.innerBlock {
+    
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    
+    
+}
+
+.spacer{
+    width: 5vw;
+}
+.vline{
+    border-left: 2px solid grey;
+}
+
+.linkcont {
+    margin: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(105, 105, 105, 0.507);
+    min-width: 30vw;
+    display: flex; /* Set to flex */
+    flex-direction: column; /* Reverse the direction to align children to the right */
+    justify-content: flex; /* Start from the beginning of the container */
+    align-items: right;
+    
+}
+
+.linkcont a {
+    color: #f1e3cf;
+    background-color: rgba(255, 228, 196, 0.219);
+    display: block;
+    padding: 20px;
+    margin: 10px;
+    text-align: right; 
+    align-items: right;
+
+}
+.linkcont a:hover {
+    font-style: italic;
+}
+#aboutp {
+    margin-left: 10px;
+    font-size: 1.2em;
+    min-width: 50vw;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bio.css">
+
+    
+</head>
+
+<body>
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb">home</a>
+        <a href="bio.html" class="currentpage">bio</a>
+    </div>
+
+    <div id="portraitCont">
+        <img src="miscimg/sushi-portrait.jpg" alt="beck" id="portrait">
+        </div>
+
+
+        <h1>
+            About...
+        </h1>
+
+
+    <div class="firstBlock">
+
+      <div class="innerBlock"></div>
+        <p id="aboutp">
+            I was born and raised in Vermont. Grew up in a small town in between all the major ski resorts. I was intrested in technology young, too late to really fall in love with the romance of web 1.0 but still able to appreciate it for more than the commecial frontends that now dominate the understanding of "tech". 
+<br><br>
+            Photogrpahy quickly became a favorite tool, providing a controllable, portable, reliable, index, that helped me orient and intentionally process and reproduce the world. As i dove deeper into the crossovers of technology and photogrpahy, i became increasinglyintrested in how technologgy effects and affects our daily lives, both conciously and unconciously. 
+<br><br>
+            As i and we are existing and creating in a time where there is immense fear and anxiety aroud tech and its control over us, i find it baffling to simultainiously notice a sense of blatent arrogance and disregard for how we activly utilize technology. 
+
+<br><br>
+            In my transition from Vermont to Chicago this understanding has broadened and deepened with new knowledge and expeience of what a developed city is like to exist within, and how much gets covered up, lost, and mistranslated in the race for more or better, and how this actualized in the human experience. 
+        </p>
+        <div class="spacer"></div>
+        <div class="vline"></div>
+        <div class="spacer"></div>
+
+        <div class="innerBlock">
+            <h2>contact...</h2>
+            <div class="linkcont">
+                <a href="https://www.instagram.com/beck_andersen/" target="_blank">instagram</a>
+                <a href="mailto:bander4@artic.edu">email me</a>
+                <a href="tel:+18027357574">802-735-7574</a>
+            </div>
+    
+        </div>
+    </div>
+
+    
+
+<script>
+    window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollX;
+  const maxScroll = document.body.scrollWidth - window.innerWidth;
+
+  // Calculate a color value based on the scroll position
+  const colorValue = (scrollPosition / maxScroll) * 255;
+
+  // Set the new background color
+  const newColor = `rgba(255, 228, 196, ${scrollPosition / maxScroll})`;
+  document.querySelector("h1").style.backgroundColor = newColor;
+});
+</script>
+
+
+</body>
+</html>

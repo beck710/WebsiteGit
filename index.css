@@ -1,0 +1,95 @@
+
+/* NAV */
+
+
+.navdiv {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 45vw;
+    font-size: min(70px, 6vw);
+    max-height: 90vh;
+    min-width: fit-content;
+}
+
+.navlist {
+    list-style-type: none;
+    /* list-style-type: georgian; */
+    position: relative;
+    z-index: 2;
+    text-align: right;
+}
+
+.navlist > li {
+    position: relative;
+}
+
+.nli {
+    text-decoration: none;
+    color: rgb(42,46,50);
+    text-align: right;
+}
+
+.nli::after {
+    content: " |X| ";
+    font-weight: bolder;
+    color: rgb(42, 46, 50);
+} 
+
+.nli:hover {
+    font-style: italic;
+}
+
+
+
+/* submenu */
+
+.submenu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    bottom: 100%;
+    left: 30px;
+    list-style-type: none;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.nlsi {
+    text-decoration: none;
+    color: rgb(42,46,50);
+    text-align: right;
+    font-size: .8em;
+}
+
+.nlsi:hover {
+    font-style: italic;
+}
+
+
+
+
+/* BACKGROUND */
+body{
+    
+    background-repeat: no-repeat;
+    background-color: rgb(227, 225, 218);
+    
+}
+.backgroundtext{
+    font-size: 60vw;
+    line-height: .7em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: ivory;
+    writing-mode: vertical-lr;
+    word-wrap: break-word;
+    max-height: 100vh;
+    z-index: -999;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
