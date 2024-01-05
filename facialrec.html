@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Facial Rec</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\website\root\styles.css">
+    <link rel="stylesheet" href="\site\site\root\styles.css">
+   
+</head>
+<body>
+    <div class="breadcrumbs">
+        <a href="\website\root\index.html" class="breadcrumb">home</a>
+        <a href="\website\root\facialRec.html" class="currentpage">Facial Rec</a>
+    </div>
+
+    <div class="maincont">
+        <div class="shorttext bisquebg">
+            These are images i took my first semester in Chicago.
+
+i was asked to map a block in a a way more signifigant than any single thing that could be found on the conventional google maps or alike by my research professor. This was frankly an amazing assingment and im endlessly grateful for it in retrospect.
+
+What i honed in on what security. Specifically the security cameras. and the abundance of them. I think it was around 97 of them that i could see and count that faced the sidewalk on a single block.
+
+On some level it's not surprising to anyone, or anyone thats lived in a city, it's normal. Even from the outside, it's not like i was in disbelief, that said, i couldnt shake this weird feeling they gave me. This knoledge of being constantly perceived. So i started researching and diving into this curiosity more.
+
+one of the first signifigant things that i realized was that Chicago was one of the first major cities to implemet a citywide cctv network. This was then expanded through legislation to require the inclusion of private surveillance cameras which face the public street in areas like downtown.
+
+This project has spiraled since then but much of it started here, by walking the same block of downtown Chicago over and over and over and over, with a big Canon5D MkIV and 70-200 2.8, trying to be as obvious as possible, capturing as many peoples faces as i could. from there the images where brought into bridge where I went through the about 7k images rading each one on a scale of 0-3, based on the amount of info, 0 being almost nothing, 1 being referential details like signs or clothing, 2 being a looser catagory of partial faces, actions, occupations, etc., and 3 being a distinct sense of confidence in whatever details are there. The images where then run through a number of computervision api's to generate content tags, including object identification, emotional estimates, scene detection, and some general exif like date and time. this info was overlaid and the images where then ordered chronologically and presented here in 3 varying densities of display.
+        </div>
+
+        <div class="smallgallery">
+            
+            <img src="https://storage.googleapis.com/universalfiles/projects/FacialRec/Screenshot%202022-12-02%20002928.jpg" alt="" class="largeimg" onclick="toggleFullScreen(this)">
+            <img src="https://storage.googleapis.com/universalfiles/projects/FacialRec/Screenshot%202022-12-02%20002928.jpg" alt="" class="largeimg" onclick="toggleFullScreen(this)">
+            <img src="https://storage.googleapis.com/universalfiles/projects/FacialRec/Screenshot%202022-12-02%20003104.jpg" alt="" class="largeimg" onclick="toggleFullScreen(this)">
+        </div>
+    </div>
+
+    
+    <div class="overlay" onclick="toggleFullScreen()"></div>
+    <div id="fullscreenImage" class="fullscreen">
+        
+        <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
+    </div>
+
+    <script>
+        function toggleFullScreen(image) {
+            var fullscreenImage = document.getElementById('fullscreenImage');
+            var overlay = document.querySelector('.overlay');
+
+            if (image) {
+                
+                var imgSrc = image.src;
+                fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
+                overlay.style.display = 'block';
+                fullscreenImage.style.display = 'block';
+            } else {
+               
+                overlay.style.display = 'none';
+                fullscreenImage.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

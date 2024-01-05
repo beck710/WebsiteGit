@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Digital Alchemy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <link rel="stylesheet" href="/css/styles.css">
+  
 </head>
 <body>
+    <div class="breadcrumbs">
+        <a href="/website/root/index.html" class="breadcrumb">home</a>
+        <a href="/website/root/videoexp.html" class="currentpage">video</a>
+    </div>
     
+    <div class="maincont">
+       
+        
+        
+       
+       
+
+
+
+
+        <div class="leftflex vw40 transparentgreybg">
+           
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+   
+    <div class="overlay" onclick="toggleFullScreen()"></div>
+    <div id="fullscreenImage" class="fullscreen">
+        
+        <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
+    </div>
+
+    <script>
+        function toggleFullScreen(image) {
+            var fullscreenImage = document.getElementById('fullscreenImage');
+            var overlay = document.querySelector('.overlay');
+
+            if (image) {
+                
+                var imgSrc = image.src;
+                fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
+                overlay.style.display = 'block';
+                fullscreenImage.style.display = 'block';
+            } else {
+               
+                overlay.style.display = 'none';
+                fullscreenImage.style.display = 'none';
+            }
+        }
+    </script>
+
+
 </body>
 </html>

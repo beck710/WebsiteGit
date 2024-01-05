@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Point Clouds</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="\root\styles.css">
+   
+</head>
+<body>
+    <div class="breadcrumbs">
+        <a href="/root/index.html" class="breadcrumb">home</a>
+        <a href="/root/videoexp.html" class="currentpage">video</a>
+    </div>
+    
+    <div class="mainflex">
+       
+        
+        
+        <div class="leftflex vw40">
+            
+            <p>
+              test test test security data transparency blah blah
+             
+
+            </p>
+        
+        </div>
+        
+        
+        <div class="flexright vw80">
+            <div class="pagegallery">
+                <script>
+                   async function fetchAndDisplayImages() {
+    try {
+        const response = await fetch('https://us-central1-imgtest-400121.cloudfunctions.net/pointcloud'); // Replace with your Google Cloud Function URL
+        if (!response.ok) {
+            throw new Error('Failed to fetch images');
+        }
+
+        const data = await response.json(); // Assuming your Cloud Function returns a JSON array of image URLs
+
+        const imageContainer = document.getElementById('imageContainer');
+        data.forEach(imageUrl => {
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            imageContainer.appendChild(img);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// Call the function to fetch and display images
+fetchAndDisplayImages();
+                 </script>
+
+
+
+
+            </div>
+     </div>
+    </div>
+    
+</body>
+</html>
