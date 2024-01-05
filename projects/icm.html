@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ICM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="\website\root\styles.css">
+</head>
+<body>
+  <div class="breadcrumbs">
+    <a href="index.html" class="breadcrumb">home</a>
+    <a href="\projects\icm.html" class="currentpage">ICM</a>
+</div>
+
+<div class="title">
+  ICM stuff
+</div>
+
+
+
+
+    <div class="maincont">
+       
+      <div class="shorttext bisquebg">
+           
+            
+        This is a collection of images i created using intentional camera movment. i like to think of these as more painterly than photogrpahic as they allow me to work the scene much more to be an index no so much of a place and time but of an experience or memory. i like to think that the infusion of multiple slow moments at a particular location infuses even more connection to that place in the final image, showing changes, presence, and connections unseen in a single strait image.
+        
+  
+  </div>
+
+
+
+      <div class="largegallery">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_4086.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5146.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5377.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5881.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5886.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_7940.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_8004.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_8014.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">    
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_8728.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+        <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_8944.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
+      
+    
+      </div>
+        
+        
+        
+
+        
+
+        
+
+
+    </div>
+
+<!-- FullscreenClick -->
+    
+<div class="overlay" onclick="toggleFullScreen()"></div>
+<div id="fullscreenImage" class="fullscreen">
+    
+    <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
+</div>
+
+<script>
+    function toggleFullScreen(image) {
+        var fullscreenImage = document.getElementById('fullscreenImage');
+        var overlay = document.querySelector('.overlay');
+
+        if (image) {
+            
+            var imgSrc = image.src;
+            fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
+            overlay.style.display = 'block';
+            fullscreenImage.style.display = 'block';
+        } else {
+           
+            overlay.style.display = 'none';
+            fullscreenImage.style.display = 'none';
+        }
+    }
+</script>
+    
+</body>
+</html>
