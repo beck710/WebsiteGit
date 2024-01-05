@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+    <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb">home</a>
+        <a href="gallery.html" class="currentpage">gallery</a>
+    </div>
+
+    <!-- ISOTOPE GALLERY -->
+    <div id="gallery" class="isotope"> 
+  
+    </div>
+ <!-- FULLSCREEN OVERLAY -->
+ <!-- <div class="overlay" onclick="toggleFullScreen()" id="fullscreenOverlay"></div>
+ <div id="fullscreenImage" class="fullscreen">
+     <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span>
+ </div> -->
+   <!-- ISOTOPE SCRIPT -->
+    <script>
+    $(document).ready(function () {
+    var $gallery = $('#gallery');
+    var imagesToLoad = [];
+    var currentIndex = 0;
+
+    function loadNextImage() {
+        if (currentIndex < imagesToLoad.length) {
+            var imgSrc = imagesToLoad[currentIndex].imgSrc;
+            var folderName = imagesToLoad[currentIndex].folderName;
+            var $img = $('<img>').attr('src', imgSrc).addClass('item resizable ' + folderName);
+            $gallery.append($img);
+        } else {
+            $gallery.imagesLoaded().progress(function () {
+                $gallery.isotope({
+                    itemSelector: '.item',
+                    percentPosition: true,
+                    layoutMode: 'masonry'
+                });
+            });
+        }
+    }
+
+    function loadImages() {
+        $.ajax({
+            url: 'https://us-central1-sitefiles.cloudfunctions.net/all-thumbnails',
+            dataType: 'json',
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var imgSrc = data[i].imgSrc;
+                    var folderName = data[i].folderName;
+
+                    if (imgSrc && (imgSrc.endsWith('.jpg') || imgSrc.endsWith('.png'))) {
+                        var category = getCategoryFromUrl(imgSrc);
+                        var $img = $('<img>').attr('src', imgSrc).addClass('item resizable ' + folderName);
+                        $gallery.append($img);
+                    }
+                }
+                loadNextImage();
+            },
+            error: function () {
+                console.error('Error fetching file list');
+            }
+        });
+    }
+
+    function getCategoryFromUrl(imgSrc) {
+        var parts = imgSrc.split('/');
+        if (parts.length > 1) {
+            var category = parts[parts.length - 2];
+            return category;
+        }
+        return '';
+    }
+
+    $gallery.on('click', '.resizable', function () {
+        toggleFullScreen(this);
+    });
+
+    function toggleFullScreen(image) {
+    var fullscreenImage = document.getElementById('fullscreenImage');
+    var overlay = document.getElementById('fullscreenOverlay');
+
+    if (overlay.style.display === 'block') {
+        overlay.style.display = 'none';
+        fullscreenImage.style.display = 'none';
+    } else {
+        if (image) {
+            var imgSrc = image.src;
+            fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
+            overlay.style.display = 'block';
+            fullscreenImage.style.display = 'block';
+        }
+    }
+}
+
+    loadImages();
+});
+    </script>
+
+   
+</body>
+</html>
