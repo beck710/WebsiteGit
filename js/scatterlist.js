@@ -58,5 +58,4 @@ document.addEventListener("DOMContentLoaded", function() {
         line.style.left = centerX1 + "px";
         line.style.top = centerY1 + "px";
     }
-    
 });
