@@ -5,7 +5,7 @@
 /* colors */
 
 
-/* nav and buttons */
+
 .grey{
     color: rgb(42,46,50);
 }
@@ -21,10 +21,14 @@
     background-color: rgba(255, 228, 196, 0.484);
 }
 
-
+/* nav and buttons */
 
 a{
    color: rgb(42,46,50);
+}
+
+.projectlist{ 
+    
 }
 
 /* TEMPLATE*/
