@@ -45,7 +45,7 @@ a{
 }
 
 .shorttext{
-    display: fixed;
+    position: fixed;
     padding: 20px;
     height: fit-content;
     max-width: 30vw;
