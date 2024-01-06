@@ -4,7 +4,13 @@
     <title>ICM</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="css/styles.css">
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
   <div class="breadcrumbs">
@@ -23,7 +29,7 @@
 
 
       
-      <div class="largegallery">
+      <div class="galleria">
         <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_4086.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
         <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5146.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
         <img src="https://storage.googleapis.com/universalfiles/projects/ICM/IMG_5377.jpg" alt="" class="largeimg"  onclick="toggleFullScreen(this)">
@@ -38,7 +44,7 @@
     
       </div>
        
-      <div class="shorttext bisquebg">
+      <div class="shorttext right bisquebg">
            
             
         This is a collection of images i created using intentional camera movment. i like to think of these as more painterly than photogrpahic as they allow me to work the scene much more to be an index no so much of a place and time but of an experience or memory. i like to think that the infusion of multiple slow moments at a particular location infuses even more connection to that place in the final image, showing changes, presence, and connections unseen in a single strait image.
@@ -48,31 +54,17 @@
 
     </div>
 
-<!-- FullscreenClick -->
-    
-<div class="overlay" onclick="toggleFullScreen()"></div>
-<div id="fullscreenImage" class="fullscreen">
-    
-    <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
-</div>
-
 <script>
-    function toggleFullScreen(image) {
-        var fullscreenImage = document.getElementById('fullscreenImage');
-        var overlay = document.querySelector('.overlay');
+    Galleria.loadTheme("themes/classic/galleria.classic.min.js");
+    Galleria.configure({
+        transition: 'fade',
+        width: '60vw',
+        lightbox: true,
 
-        if (image) {
-            
-            var imgSrc = image.src;
-            fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
-            overlay.style.display = 'block';
-            fullscreenImage.style.display = 'block';
-        } else {
-           
-            overlay.style.display = 'none';
-            fullscreenImage.style.display = 'none';
-        }
-    }
+
+
+    });
+    Galleria.run();
 </script>
     
 </body>

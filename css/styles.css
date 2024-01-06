@@ -28,7 +28,7 @@ a{
 }
 
 .projectlist{ 
-    
+
 }
 
 /* TEMPLATE*/
@@ -44,7 +44,7 @@ a{
 .maincont{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+   
     
 }
 
@@ -53,24 +53,34 @@ a{
     padding: 20px;
     height: fit-content;
     max-width: 30vw;
-    
-    
 
 }
+
+.left{
+    left: 10px;
+}
+.right{
+    right: 10px;
+}
+
+
 .pad10{
     padding: 10px;
 }
 
 
 .smallgallery{
-
+    max-height: 150vh;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    min-width: 30vw;
-    max-width: 40vw;
+    min-width: 10vw;
+    max-width: 20vw;
     justify-content: space-evenly;
     
 }
+
+
 
 
 .smallimg{
