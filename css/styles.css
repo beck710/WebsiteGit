@@ -27,9 +27,34 @@ a{
    color: rgb(42,46,50);
 }
 
-.projectlist{ 
+#projectlist{ 
+    font-size: 1.7rem;
+    list-style: georgian;
 
 }
+
+
+
+.pli::after{
+    content: '';
+    position: absolute;
+    width: 2px; /* Width of the line */
+    background-color: #000; /* Line color */
+    top: 0;
+    bottom: 0;
+    left: 100%; /* Position the line to the right of the list item */
+    margin-left: 5px; /* Adjust the margin based on your design */
+    z-index: -1;
+}
+
+.line{
+    position: absolute;
+    height: 2px; /* Adjust the thickness of the line as needed */
+    background-color: #000; /* Line color */
+    transform-origin: 0% 50%;
+    z-index: -1;
+}
+
 
 /* TEMPLATE*/
 
@@ -150,6 +175,10 @@ video {
     background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
 }
+
+
+
+
 
 
 

@@ -25,16 +25,16 @@
 
 
         <div class="leftflex transparentgreybg">
-           <ul class="projectlist">
-            <li><a href="videoexp.html">&lt;Video Experiments</a></li>
+           <ul id="projectlist">
+            <li class="pli"><a href="videoexp.html">&lt;Video Experiments</a></li>
 
-            <li><a href="digitalAlchemy.html">&lt;Digital Alchemy</a></li>
+            <li class="pli"><a href="digitalAlchemy.html">&lt;Digital Alchemy</a></li>
                 
-            <li><a href="strungUp.html">&lt;Strung Up Installation</a></li>
+            <li class="pli"><a href="strungUp.html">&lt;Strung Up Installation</a></li>
 
-            <li><a href="facialRec.html">&lt;Facial Rec</a></li>
+            <li class="pli"><a href="facialRec.html">&lt;Facial Rec</a></li>
             
-            <li><a href="icm.html">&lt;ICM stuff</a></li>
+            <li class="pli"><a href="icm.html">&lt;ICM stuff</a></li>
            </ul>
         </div>
 
@@ -50,30 +50,10 @@
 
 
    
-    <div class="overlay" onclick="toggleFullScreen()"></div>
-    <div id="fullscreenImage" class="fullscreen">
-        
-        <span id="closeFullscreen" onclick="toggleFullScreen()">&times;</span> 
-    </div>
+   
 
-    <script>
-        function toggleFullScreen(image) {
-            var fullscreenImage = document.getElementById('fullscreenImage');
-            var overlay = document.querySelector('.overlay');
-
-            if (image) {
-                
-                var imgSrc = image.src;
-                fullscreenImage.innerHTML = '<img src="' + imgSrc + '">';
-                overlay.style.display = 'block';
-                fullscreenImage.style.display = 'block';
-            } else {
-               
-                overlay.style.display = 'none';
-                fullscreenImage.style.display = 'none';
-            }
-        }
-    </script>
+    <script src="js/scatterlist.js"></script>
+   
 
 
 </body>
